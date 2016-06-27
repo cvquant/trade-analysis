@@ -1,5 +1,5 @@
 # How can you contribute
-As with all open source projects, we really appriciate pull requests from all enthusiasts. Here we will make sure that this process is make super easy for you.  
+As with all open source projects, we really appreciate pull requests from all enthusiasts. Here we will make sure that this process is made super easy for you.  
 
 ## Formatting
 1. We use [yapf](https://github.com/google/yapf) to format the python code with COLUMN_LIMIT as 120.

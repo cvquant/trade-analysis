@@ -11,7 +11,7 @@ With trade-analysis more seasoned traders can code up their intuition and see ho
         `sudo apt-get update`  
         `sudo apt-get upgrade`  
         `sudo apt-get install python-pip`        
-5. We love  using virtualenv. It enables to work on different python projects with differnt versions of libraries. It is not mandatory to install. Install it from [here](https://virtualenv.pypa.io/en/stable/installation/)  
+5. We love  using virtualenv. It enables to work on different python projects with different versions of libraries. It is not mandatory to install. Install it from [here](https://virtualenv.pypa.io/en/stable/installation/)  
 6. Install the project requirements by executing `pip install -r requirements.txt`  
 7. Add to PYTHONPATH trade-analysis directory.
 
