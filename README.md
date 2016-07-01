@@ -9,7 +9,6 @@ With trade-analysis more seasoned traders can code up their intuition and see ho
     `git clone https://github.com/USERNAME/trade-analysis`  
 4. Make sure pip is installed. Check if is installed by `pip -V` on linux systems. If not do the following:  
         `sudo apt-get update`  
-        `sudo apt-get upgrade`  
         `sudo apt-get install python-pip`        
 5. We love  using virtualenv. It enables to work on different python projects with different versions of libraries. It is not mandatory to install. Install it from [here](https://virtualenv.pypa.io/en/stable/installation/)  
 6. Install the project requirements by executing `pip install -r requirements.txt`  
