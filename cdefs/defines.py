@@ -1,7 +1,13 @@
+import sys
+
 def enum(*sequential, **named):
     enums = dict(zip(sequential, range(len(sequential))), **named)
-    forward_dict = dict((key, value) for key, value in enums.iteritems())
-    reverse_dict = dict((value, key) for key, value in enums.iteritems())
+    if sys.version_info >= (3, 0) :
+        forward_dict = dict((key, value) for key, value in enums.items())
+        reverse_dict = dict((value, key) for key, value in enums.items())
+    else:
+        forward_dict = dict((key, value) for key, value in enums.iteritems())
+        reverse_dict = dict((value, key) for key, value in enums.iteritems())
     enums['forward'] = forward_dict
     enums['reverse'] = reverse_dict
     return type('Enum', (), enums)
