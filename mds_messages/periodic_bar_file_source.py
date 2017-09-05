@@ -7,7 +7,7 @@ from utils.datetime_convertor import get_unix_timestamp_from_hhmm_tz
 
 import os
 import pytz
-
+import platform
 
 class C_TimeInternal(Structure):
     _fields_ = [("tv_usec", c_int), ("tv_sec", c_int)]
@@ -51,7 +51,10 @@ class PeriodicBarFileSource(ExternalDataListener):
             self.next_event_timestamp = 0  # Go to passive mode
 
     def _filesource(self, ticker):
-        return os.path.expanduser('./datafiles/{}'.format(ticker))
+        if platform.system() == 'Windows':
+            return os.path.expanduser(r'.\datafiles\{}'.format(ticker))
+        else:
+            return os.path.expanduser('./datafiles/{}'.format(ticker))
 
     def load_data(self):
         self.process_etf_data([self._filesource(self.shortcode)])

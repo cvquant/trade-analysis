@@ -42,9 +42,9 @@ def get_secs_from_midnight( this_date, hhmm, tz ):
     return ( ( hhmmss_utc % 100 ) + 60 * ( ( hhmmss_utc / 100 ) % 100 ) + 3600 * ( ( hhmmss_utc / 10000 ) % 100 ) )
 
 def get_custom_est_secs_from_midnight( this_date, hhmm, tz ):
-    this_time = datetime.datetime.combine( this_date , datetime.time( hhmm / 100, hhmm % 100, tzinfo = tz ) ).astimezone( pytz.timezone( 'UTC' ) )
+    this_time = datetime.datetime.combine( this_date , datetime.time( int(hhmm / 100), hhmm % 100, tzinfo = tz ) ).astimezone( pytz.timezone( 'UTC' ) )
     custom_est_ref_time = get_custom_est_ref_time_from_unix_timestamp( this_time )
     return ( this_time - custom_est_ref_time ).total_seconds( )
 
 def get_unix_timestamp_from_hhmm_tz( this_date, hhmm, tz ):
-    return datetime.datetime.combine( this_date , datetime.time( hhmm / 100, hhmm % 100, tzinfo = tz ) ).astimezone( pytz.timezone( 'UTC' ) )
+    return datetime.datetime.combine( this_date , datetime.time(int(hhmm / 100), hhmm % 100, tzinfo = tz )).astimezone(pytz.timezone('UTC'))
